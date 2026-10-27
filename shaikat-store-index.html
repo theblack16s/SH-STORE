@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123b73">
+<title>Shaikat Store — Better Products, Better Life</title>
+<style>
+:root{--navy:#123b73;--blue:#0878f9;--ink:#17243b;--muted:#68758b;--bg:#f4f7fc;--line:#e4eaf3;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,"Noto Sans Bengali",sans-serif}
+a{color:inherit}.top{background:var(--navy);color:#fff;padding:9px 4%;font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header{background:#fff;padding:18px 4%;display:flex;align-items:center;gap:18px;justify-content:space-between;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.brand{font-size:27px;font-weight:800;color:var(--navy);white-space:nowrap}.brand span{color:var(--blue)}.tagline{font-size:12px;color:var(--muted);margin-top:4px}
+.search{display:flex;flex:1;max-width:500px;min-width:190px}.search input{width:100%;padding:12px;border:1px solid #cfd9e8;border-radius:9px 0 0 9px;font-size:15px}.search button{border-radius:0 9px 9px 0;background:var(--blue);color:white;border:0;padding:0 18px}
+.cart-button{border:1px solid var(--line);background:white;border-radius:9px;padding:11px 14px;font-weight:bold}
+nav{display:flex;gap:8px;padding:12px 4%;background:white;overflow-x:auto;border-bottom:1px solid var(--line)}nav button{border:0;background:transparent;padding:9px 14px;border-radius:8px;white-space:nowrap;font-weight:600;color:#31425e}nav button.active,nav button:hover{background:var(--blue);color:#fff}
+main{max-width:1200px;margin:auto;padding:22px 4% 40px}.hero{background:linear-gradient(115deg,#082653,#1458a5);color:#fff;border-radius:18px;padding:clamp(24px,5vw,54px);display:flex;align-items:center;justify-content:space-between;gap:20px;overflow:hidden}.hero small{font-size:14px;letter-spacing:1px;color:#cfe4ff}.hero h1{font-size:clamp(30px,5vw,48px);margin:10px 0}.hero p{max-width:460px;line-height:1.6;color:#e2edff}.hero .emoji{font-size:clamp(65px,13vw,130px);filter:drop-shadow(0 10px 18px #0003)}.primary{background:var(--blue);color:white;border:0;border-radius:9px;padding:12px 17px;font-weight:bold;cursor:pointer}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:26px 0 14px}.section-title h2{font-size:22px;margin:0}.count{font-size:13px;color:var(--muted)}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.product{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 3px 12px #16376508;min-width:0}.product-art{height:145px;border-radius:10px;background:linear-gradient(135deg,#eaf2ff,#f8fbff);display:grid;place-items:center;font-size:67px}.product h3{font-size:15px;min-height:36px;margin:12px 0 7px}.price{font-size:17px;font-weight:800;color:var(--navy)}.category{font-size:12px;color:var(--muted);margin-top:5px}.product button{width:100%;margin-top:12px}.layout{display:grid;grid-template-columns:1.3fr .7fr;gap:18px;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:22px}.panel h2{margin:0 0 14px;font-size:20px}.cart-row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:12px 0}.cart-row small{display:block;color:var(--muted);margin-top:4px}.qty{display:flex;align-items:center;gap:8px}.qty button{border:1px solid var(--line);background:#fff;border-radius:6px;padding:4px 9px}.total{display:flex;justify-content:space-between;font-size:18px;font-weight:bold;margin:16px 0}
+label{display:block;font-size:13px;font-weight:bold;margin:12px 0 6px}input,select,textarea{font:inherit;width:100%;padding:11px;border:1px solid #cfd9e8;border-radius:8px;background:white}textarea{min-height:75px;resize:vertical}.notice{background:#fff8df;color:#77550b;padding:12px;border-radius:9px;font-size:13px;line-height:1.5;margin:12px 0}.muted{color:var(--muted);font-size:13px;line-height:1.6}.empty{padding:22px 0;color:var(--muted)}footer{background:#0c2447;color:#dce8fb;padding:25px 4%;text-align:center;font-size:13px;line-height:1.8}
+@media(max-width:850px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.layout{grid-template-columns:1fr}.hero .emoji{font-size:70px}}
+@media(max-width:560px){header{gap:12px}.brand{font-size:23px}.search{order:3;flex-basis:100%;max-width:none}.hero{padding:23px}.hero .emoji{font-size:52px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product{padding:9px}.product-art{height:115px;font-size:52px}.product h3{font-size:14px}.section-title h2{font-size:19px}.panel{padding:14px}}
+</style>
+</head>
+<body>
+<div class="top"><span>🚚 সারা বাংলাদেশে ডেলিভারি</span><span>Shaikat Store · আপনার অনলাইন শপ</span></div>
+<header>
+  <div><div class="brand">🛍️ Shaikat <span>Store</span></div><div class="tagline">Better Products • Better Life</div></div>
+  <div class="search"><input id="search" type="search" placeholder="পণ্য খুঁজুন..." aria-label="পণ্য খুঁজুন"><button onclick="renderProducts()">🔎</button></div>
+  <button class="cart-button" onclick="document.getElementById('cart-panel').scrollIntoView({behavior:'smooth'})">🛒 কার্ট (<span id="cart-count">0</span>)</button>
+</header>
+<nav id="categories">
+  <button class="active" data-category="সব" onclick="setCategory('সব',this)">সব পণ্য</button>
+  <button data-category="ফ্যাশন" onclick="setCategory('ফ্যাশন',this)">ফ্যাশন</button>
+  <button data-category="ইলেকট্রনিক্স" onclick="setCategory('ইলেকট্রনিক্স',this)">ইলেকট্রনিক্স</button>
+  <button data-category="হোম" onclick="setCategory('হোম',this)">হোম & লিভিং</button>
+  <button data-category="বিউটি" onclick="setCategory('বিউটি',this)">বিউটি</button>
+  <button data-category="গ্যাজেট" onclick="setCategory('গ্যাজেট',this)">গ্যাজেট</button>
+</nav>
+<main>
+  <section class="hero">
+    <div><small>WELCOME TO YOUR ONE-STOP SHOP</small><h1>Shaikat Store</h1><p>আপনার পছন্দের পণ্য, সহজ অনলাইন শপিং। পণ্য বেছে নিন এবং অর্ডার শুরু করুন।</p><button class="primary" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">এখনই শপিং করুন →</button></div>
+    <div class="emoji" aria-hidden="true">🎧 📱 👟</div>
+  </section>
+  <div class="section-title" id="shop"><h2>জনপ্রিয় পণ্য</h2><span class="count" id="product-count"></span></div>
+  <section class="products" id="products"></section>
+  <div class="layout">
+    <section class="panel" id="cart-panel"><h2>🛒 আপনার কার্ট</h2><div id="cart-items" class="empty">এখনো কোনো পণ্য যোগ করা হয়নি।</div><div class="total"><span>সর্বমোট</span><span id="cart-total">৳০</span></div><p class="muted">ডেলিভারি চার্জ ও চূড়ান্ত মূল্য বিক্রেতা নিশ্চিত করবেন।</p></section>
+    <section class="panel"><h2>অর্ডার তথ্য</h2>
+      <form id="checkout-form">
+        <label for="customer">আপনার নাম *</label><input id="customer" required autocomplete="name" placeholder="পূর্ণ নাম">
+        <label for="phone">মোবাইল নম্বর *</label><input id="phone" required type="tel" autocomplete="tel" placeholder="01XXXXXXXXX" pattern="01[0-9]{9}">
+        <label for="address">ডেলিভারি ঠিকানা *</label><textarea id="address" required autocomplete="street-address" placeholder="বাসা, রাস্তা, এলাকা, জেলা"></textarea>
+        <label for="payment">পেমেন্ট পদ্ধতি</label><select id="payment"><option value="Online payment (gateway not connected)">অনলাইন পেমেন্ট (গেটওয়ে যুক্ত করতে হবে)</option><option value="Cash on delivery">ক্যাশ অন ডেলিভারি</option></select>
+        <div class="notice">ডেমো: এই সাইটে এখনো কোনো বাস্তব পেমেন্ট গেটওয়ে বা অর্ডার ডেটাবেস যুক্ত নেই। অনলাইন পেমেন্ট এখনো নেওয়া হবে না।</div>
+        <button class="primary" type="submit" style="width:100%">অর্ডার সারাংশ তৈরি করুন</button>
+      </form>
+      <div id="order-result" class="muted" aria-live="polite"></div>
+    </section>
+  </div>
+</main>
+<footer><strong>Shaikat Store</strong><br>একটি প্রাথমিক ডেমো ই-কমার্স ওয়েবসাইট।<br>লাইভ বিক্রির আগে আসল পণ্যের ছবি, যোগাযোগের তথ্য, গোপনীয়তা নীতি, ডেলিভারি/রিটার্ন নীতি এবং নিরাপদ পেমেন্ট ব্যবস্থা যুক্ত করুন।</footer>
+<script>
+const products=[
+ {id:1,name:"ওয়্যারলেস ইয়ারবাড",category:"ইলেকট্রনিক্স",price:1250,emoji:"🎧"},
+ {id:2,name:"স্মার্ট ওয়াচ",category:"গ্যাজেট",price:2850,emoji:"⌚"},
+ {id:3,name:"ট্রাভেল ব্যাকপ্যাক",category:"ফ্যাশন",price:1650,emoji:"🎒"},
+ {id:4,name:"স্পোর্টস জুতা",category:"ফ্যাশন",price:2300,emoji:"👟"},
+ {id:5,name:"কটন টি-শার্ট",category:"ফ্যাশন",price:450,emoji:"👕"},
+ {id:6,name:"স্মার্টফোন",category:"ইলেকট্রনিক্স",price:24999,emoji:"📱"},
+ {id:7,name:"এয়ার ফ্রায়ার",category:"হোম",price:6800,emoji:"🍳"},
+ {id:8,name:"স্কিনকেয়ার সেট",category:"বিউটি",price:1100,emoji:"🧴"}
+];
+let cart=[],category="সব";
+const money=n=>"৳"+n.toLocaleString("en-BD");
+function renderProducts(){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ const shown=products.filter(p=>(category==="সব"||p.category===category)&&(`${p.name} ${p.category}`).toLowerCase().includes(q));
+ document.getElementById("product-count").textContent=shown.length+"টি পণ্য";
+ document.getElementById("products").innerHTML=shown.length?shown.map(p=>`<article class="product"><div class="product-art">${p.emoji}</div><h3>${p.name}</h3><div class="price">${money(p.price)}</div><div class="category">${p.category}</div><button class="primary" onclick="addToCart(${p.id})">＋ কার্টে যোগ করুন</button></article>`).join(""):'<p>কোনো পণ্য পাওয়া যায়নি।</p>';
+}
+function setCategory(c,btn){category=c;document.querySelectorAll("#categories button").forEach(b=>b.classList.remove("active"));btn.classList.add("active");renderProducts()}
+function addToCart(id){const p=products.find(x=>x.id===id),found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({...p,qty:1});renderCart()}
+function changeQty(id,d){const p=cart.find(x=>x.id===id);if(!p)return;p.qty+=d;if(p.qty<=0)cart=cart.filter(x=>x.id!==id);renderCart()}
+function renderCart(){
+ document.getElementById("cart-count").textContent=cart.reduce((s,p)=>s+p.qty,0);
+ document.getElementById("cart-items").innerHTML=cart.length?cart.map(p=>`<div class="cart-row"><div><strong>${p.name}</strong><small>${money(p.price)} × ${p.qty}</small></div><div class="qty"><button type="button" onclick="changeQty(${p.id},-1)" aria-label="কমাও">−</button><span>${p.qty}</span><button type="button" onclick="changeQty(${p.id},1)" aria-label="বাড়াও">+</button></div></div>`).join(""):'<div class="empty">এখনো কোনো পণ্য যোগ করা হয়নি।</div>';
+ document.getElementById("cart-total").textContent=money(cart.reduce((s,p)=>s+p.price*p.qty,0));
+}
+document.getElementById("search").addEventListener("input",renderProducts);
+document.getElementById("checkout-form").addEventListener("submit",e=>{
+ e.preventDefault();
+ if(!cart.length){alert("আগে কার্টে অন্তত একটি পণ্য যোগ করুন।");return}
+ const name=document.getElementById("customer").value.trim(),phone=document.getElementById("phone").value.trim(),address=document.getElementById("address").value.trim(),payment=document.getElementById("payment").value;
+ const lines=cart.map(p=>`${p.name} × ${p.qty} — ${money(p.price*p.qty)}`).join("\n");
+ document.getElementById("order-result").innerText=`ডেমো অর্ডার সারাংশ\nনাম: ${name}\nমোবাইল: ${phone}\nঠিকানা: ${address}\nপণ্য:\n${lines}\nমোট: ${money(cart.reduce((s,p)=>s+p.price*p.qty,0))}\nপেমেন্ট: ${payment}\n\nএটি শুধু এই পেজে দেখানো সারাংশ—অর্ডার সার্ভারে সেভ হয়নি এবং কোনো পেমেন্ট নেওয়া হয়নি।`;
+});
+renderProducts();renderCart();
+</script>
+</body>
+</html>
